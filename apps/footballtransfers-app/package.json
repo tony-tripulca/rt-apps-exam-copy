@@ -1,0 +1,48 @@
+{
+  "name": "footballtransfers-app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "expo": "*",
+    "@nx/expo": "*",
+    "@expo/metro-config": "*",
+    "metro-config": "*",
+    "react-native-svg": "*",
+    "react-native-svg-transformer": "*",
+    "@eva-design/eva": "*",
+    "@react-navigation/bottom-tabs": "*",
+    "@react-navigation/native": "*",
+    "@ui-kitten/components": "*",
+    "@ui-kitten/eva-icons": "*",
+    "react": "*",
+    "react-native": "*",
+    "axios": "*",
+    "@testing-library/jest-native": "*",
+    "react-native-render-html": "*",
+    "zustand": "*",
+    "@react-native-async-storage/async-storage": "*",
+    "@react-navigation/native-stack": "*",
+    "expo-splash-screen": "~0.20.5",
+    "expo-status-bar": "~1.6.0",
+    "@babel/core": "*",
+    "react-native-screens": "*",
+    "react-native-safe-area-context": "*",
+    "expo-dev-client": "*",
+    "expo-constants": "*",
+    "react-native-onesignal": "*",
+    "react-native-pager-view": "*",
+    "@react-navigation/material-top-tabs": "*",
+    "lodash": "*",
+    "@expo/vector-icons": "*",
+    "react-native-linear-gradient": "*"
+  },
+  "scripts": {
+    "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/footballtransfers-app && cp package-lock.json apps/footballtransfers-app",
+    "eas-build-post-install": "cd ../../ && node tools/scripts/eas-build-post-install.mjs . apps/footballtransfers-app",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  }
+}
