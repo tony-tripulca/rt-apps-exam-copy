@@ -23,7 +23,7 @@ export const ArticleRenderer = ({ htmlString, padding }: ArticleRendererProps) =
       contentWidth={contentWidth}
       tagsStyles={{
         // TODO: replace with font theme
-        p: { color: FONT_COLOR.PRIMARY, fontSize: FONT_SIZE.SM },
+        p: { color: FONT_COLOR.PRIMARY, fontSize: FONT_SIZE.LG },
       }}
     />
   );
