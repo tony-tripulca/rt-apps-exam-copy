@@ -35,6 +35,7 @@ interface FlexViewProps {
   width?: DimensionValue;
   height?: DimensionValue;
   padding?: Spacing | 0;
+  margin?: Spacing | 0;
   gap?: number;
   backgroundColor?: string;
   onPress?: () => void;
@@ -48,6 +49,7 @@ export const FlexView = ({
   width,
   height,
   padding = Spacing.XXS,
+  margin = Spacing.XXS,
   gap,
   backgroundColor,
   onPress,
@@ -56,7 +58,7 @@ export const FlexView = ({
   const combinedStyle = [
     styles[direction],
     align?.map((a) => styles[a]),
-    { width, height, padding, gap, backgroundColor },
+    { width, height, padding, margin, gap, backgroundColor },
     style,
   ];
 

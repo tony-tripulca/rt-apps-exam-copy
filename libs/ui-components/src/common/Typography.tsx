@@ -1,6 +1,7 @@
 import { FontWeight, useTheme } from '@rt-apps/theming';
 import React from 'react';
 import { DimensionValue, Dimensions, StyleProp, StyleSheet, Text, TextStyle } from 'react-native';
+import { Spacing } from './Flexbox';
 
 export type FontVariant = 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'caption' | 'th' | 'tag';
 
@@ -13,6 +14,7 @@ interface TypographyProps {
   color?: string;
   weight?: keyof FontWeight;
   width?: DimensionValue;
+  padding?: Spacing | 0;
   align?: 'left' | 'center' | 'right';
   style?: StyleProp<TextStyle>;
 }
@@ -23,6 +25,7 @@ export const Typography = ({
   color,
   weight,
   width,
+  padding = Spacing.XXS,
   align,
   style,
 }: TypographyProps) => {
@@ -76,9 +79,18 @@ export const Typography = ({
   const colorValue = color ? { color } : {};
   const weightValue = weight ? { fontWeight: FONT_WEIGHT[weight] } : {};
   const widthValue = width ? { width } : {};
+  const paddingValue = padding ? { padding } : {};
   const alignValue = align ? { textAlign: align } : {};
 
-  const textStyle = [styles[variant], colorValue, weightValue, widthValue, alignValue, style];
+  const textStyle = [
+    styles[variant],
+    colorValue,
+    weightValue,
+    widthValue,
+    paddingValue,
+    alignValue,
+    style,
+  ];
 
   return <Text style={textStyle}>{children}</Text>;
 };

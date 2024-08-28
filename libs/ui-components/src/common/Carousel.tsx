@@ -36,8 +36,8 @@ export const Carousel = ({ images, height = 260, onPress }: CarouselProps) => {
       flexDirection: 'row',
       position: 'absolute',
       alignSelf: 'center',
-      top: 10,
-      right: 10,
+      top: 12,
+      right: 24,
     },
     gradient: {
       position: 'absolute',
@@ -46,8 +46,8 @@ export const Carousel = ({ images, height = 260, onPress }: CarouselProps) => {
       bottom: 0,
     },
     dot: {
-      height: 10,
-      width: 10,
+      height: 8,
+      width: 8,
       borderRadius: 5,
       margin: SPACING.XS,
       borderWidth: 1,
@@ -66,11 +66,11 @@ export const Carousel = ({ images, height = 260, onPress }: CarouselProps) => {
       zIndex: 1,
     },
     prev: {
-      left: 0,
+      left: 16,
       top: 0,
     },
     next: {
-      right: 0,
+      right: 16,
       top: 0,
     },
   });
@@ -102,7 +102,7 @@ export const Carousel = ({ images, height = 260, onPress }: CarouselProps) => {
   return (
     <View>
       <TouchableOpacity style={[styles.hit, styles.prev]} onPress={scrollLeft}>
-        <Left />
+        <Left size={16} />
       </TouchableOpacity>
 
       <ScrollView
@@ -133,7 +133,7 @@ export const Carousel = ({ images, height = 260, onPress }: CarouselProps) => {
       </View>
 
       <TouchableOpacity style={[styles.hit, styles.next]} onPress={scrollRight}>
-        <Right />
+        <Right size={16} />
       </TouchableOpacity>
     </View>
   );

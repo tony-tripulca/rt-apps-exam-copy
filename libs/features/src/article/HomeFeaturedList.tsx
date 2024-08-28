@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   title: {
     position: 'absolute',
-    padding: Spacing.SM,
+    padding: Spacing.LG,
     bottom: 0,
   },
 });

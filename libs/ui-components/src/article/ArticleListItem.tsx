@@ -1,5 +1,5 @@
 import { IArticleListItem } from '@rt-apps/data';
-import { Pressable } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { ArticleLabel } from './ArticleLabel';
 import { FlexAlignment, FlexView, ImagePreview, Typography } from '../common';
 import { useTheme } from '@rt-apps/theming';
@@ -12,6 +12,21 @@ interface ArticleListItemProps {
 export const ArticleListItem = ({ article, onPress }: ArticleListItemProps) => {
   const { SPACING } = useTheme();
 
+  const styles = StyleSheet.create({
+    list: {
+      marginTop: 4,
+      marginBottom: 4,
+      backgroundColor: 'rgba(0,0,0,0.05)',
+      borderRadius: 8,
+    },
+    listImage: {
+      borderTopLeftRadius: 8,
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0,
+      borderBottomLeftRadius: 8,
+    },
+  });
+
   // todo: use locale from i18n
   const formattedDate = new Intl.DateTimeFormat('en-GB', {
     day: '2-digit',
@@ -21,14 +36,16 @@ export const ArticleListItem = ({ article, onPress }: ArticleListItemProps) => {
 
   return (
     <Pressable onPress={() => onPress()}>
-      <FlexView padding={SPACING.XS} gap={8}>
-        <ImagePreview uri={article.image.src} height={75} width={75} />
+      <FlexView margin={SPACING.LG} padding={0} gap={8} style={styles.list}>
+        <ImagePreview uri={article.image.src} height={100} width={100} style={styles.listImage} />
         <FlexView width="70%" direction="col" align={[FlexAlignment.ALIGN_START]} gap={4}>
           <FlexView align={[FlexAlignment.ALIGN_CENTER]} gap={8} padding={0}>
             {article.label ? <ArticleLabel data={article.label} /> : null}
             <Typography variant="caption">{formattedDate}</Typography>
           </FlexView>
-          <Typography variant="body2">{article.title}</Typography>
+          <Typography variant="body2" width="90%">
+            {article.title}
+          </Typography>
         </FlexView>
       </FlexView>
     </Pressable>
