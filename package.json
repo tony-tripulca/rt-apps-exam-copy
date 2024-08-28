@@ -2,7 +2,10 @@
   "name": "@rt-apps/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
   "private": true,
   "dependencies": {
     "@eva-design/eva": "^2.2.0",

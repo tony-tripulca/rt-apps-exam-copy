@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "@rt-apps/source",
+    "slug": "@rt-appssource",
+    "version": "0.0.0",
+    "sdkVersion": "49.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "android": {
+      "package": "io.expo.client"
+    }
+  }
+}
