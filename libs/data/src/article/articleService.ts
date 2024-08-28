@@ -14,7 +14,19 @@ export const fetchArticles = async ({ page = 1, ids }: { page: number; ids?: str
     params.articleIds = ids.join(',');
   }
 
-  const { data } = await axiosClient.get<IArticleList>('/articles', {
+  // const { data } = await axiosClient.get<IArticleList>('/articles', {
+  //   params,
+  // });
+
+  /**
+   * TO DO: Revert back to original call
+   * Change reason: Comparison with search endpoint (searchService.ts)
+   * Test result: Successful fetching data (articles)
+   */
+  const { data } = await axios<IArticleList>({
+    method: 'GET',
+    baseURL: 'https://www.footballtransfers.com/nl/api/v1',
+    url: `/articles`,
     params,
   });
 
