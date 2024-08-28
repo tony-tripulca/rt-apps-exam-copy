@@ -18,9 +18,9 @@ import { Spacing } from '@rt-apps/ui-components';
 import { Bookmarks } from './bookmarks/Bookmarks';
 import { News } from './news/News';
 import { Search } from './search/Search';
-import { SettingsScreen } from './settings/SettingsScreen';
 
 import { BASE_THEME, ThemeProvider, useTheme } from '@rt-apps/theming';
+import { Settings } from './settings/Settings';
 
 type BottomTabParamList = {
   News: undefined;
@@ -95,7 +95,7 @@ export const App = () => {
         />
         <BottomTab.Screen
           name="Settings"
-          component={SettingsScreen}
+          component={Settings}
           options={{
             tabBarIcon: ({ color }) => <Ionicons name="settings-outline" color={color} size={14} />,
           }}
