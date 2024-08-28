@@ -7,7 +7,7 @@ type BookmarksScreenProps = NativeStackScreenProps<BookmarksStackParamList>;
 
 export const BookmarksScreen = ({ navigation }: BookmarksScreenProps) => {
   return (
-    <Layout style={{ flex: 1 }}>
+    <Layout style={{ flex: 1, paddingTop: 16 }}>
       <BookmarkList
         onArticlePress={(articleId) => {
           navigation.navigate('ArticleDetailScreen', { articleId });

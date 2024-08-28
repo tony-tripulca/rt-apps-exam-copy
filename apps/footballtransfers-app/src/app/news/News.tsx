@@ -17,7 +17,7 @@ export const News = () => {
     <NewsStack.Navigator
       initialRouteName="NewsScreen"
       screenOptions={{
-        headerTitleAlign: 'center',
+        headerTitleAlign: 'left',
         headerStyle: { backgroundColor: '#031735' },
         headerBackTitleVisible: false,
         headerTintColor: 'white',

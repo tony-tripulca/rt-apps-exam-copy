@@ -16,7 +16,7 @@ export const Bookmarks = () => {
     <BookmarksStack.Navigator
       initialRouteName="BookmarksScreen"
       screenOptions={{
-        headerTitleAlign: 'center',
+        headerTitleAlign: 'left',
         headerStyle: { backgroundColor: '#031735' },
         headerBackTitleVisible: false,
         headerTintColor: 'white',
